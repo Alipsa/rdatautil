@@ -29,8 +29,13 @@ public final class RDataUtil {
   }
 
   public static void write(SEXP sexp, File toFile) throws IOException {
-    try(OutputStream fos = Files.newOutputStream(toFile.toPath());
-        RDataWriter writer = new RDataWriter(Context.newTopLevelContext(), fos)) {
+    try(OutputStream fos = Files.newOutputStream(toFile.toPath())) {
+      write(sexp, fos);
+    }
+  }
+
+  public static void write(SEXP sexp, OutputStream os) throws IOException {
+    try(RDataWriter writer = new RDataWriter(Context.newTopLevelContext(), os)) {
       writer.save(sexp);
     }
   }
