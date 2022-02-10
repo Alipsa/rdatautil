@@ -13,7 +13,8 @@ saveRDS(mtcars, "mtcars.rds")
 my_data <- readRDS("mtcars.rds")
 ```
 
-This utility allows you to save and read such rsd files in java. It relies on the Renjin project for RData functionality.
+This utility allows you to save and read such rsd files in java. It relies on the [Renjin project](https://github.com/bedatadriven/renjin) 
+for the heavy lifting.
 
 ## Usage
 
@@ -62,7 +63,8 @@ RDataUtil.write(sexp, System.out);
 ```
 
 ### Handling complex data
-The [se.alipsa:renjin-client-data-utils](https://github.com/perNyfelt/renjin-client-data-utils) project enables you to deal with tabular data and combines very well with rdatautl:
+The [se.alipsa:renjin-client-data-utils](https://github.com/perNyfelt/renjin-client-data-utils) project enables you to 
+deal with tabular data and combines very well with rdatautil:
 
 Reading data:
 ```groovy
