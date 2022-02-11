@@ -69,5 +69,7 @@ public class RDataUtilTest {
     assertTrue(outFile2.length() > 100);
 
     assertEquals(outFile.length(), outFile2.length(), "Length should be equal");
+    outFile.deleteOnExit();
+    outFile2.deleteOnExit();
   }
 }
